@@ -30,10 +30,10 @@
   width: 52px;
   height: 52px;
   border-radius: 8px;
-  background: #B4231C;
-  color: #fff;
+  background: linear-gradient(135deg, #F7D56A, #E9B824 60%, #C8971A);
+  color: #1E1A17;
   border: 2px solid #FFF8EC;
-  box-shadow: 0 10px 24px -10px rgba(180, 35, 28, 0.7);
+  box-shadow: 0 10px 24px -10px rgba(201, 151, 26, 0.7);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -45,15 +45,16 @@
 
 .a11y-widget-trigger:hover,
 .a11y-widget-trigger:focus-visible {
-  background: #8E1A15;
-  outline: 3px solid #E9B824;
+  background: linear-gradient(135deg, #E9B824, #C8971A);
+  transform: translateY(-2px);
+  outline: 3px solid #B4231C;
   outline-offset: 2px;
 }
 
 .a11y-widget-trigger .fa-wheelchair {
   font-size: 24px;
   line-height: 1;
-  color: #fff;
+  color: #1E1A17;
 }
 
 .a11y-widget-trigger .a11y-widget-icon {
@@ -543,8 +544,8 @@ html.a11y-dark-mode .a11y-widget-action svg {
 
 html.a11y-high-contrast .a11y-widget-trigger,
 html.a11y-dark-mode .a11y-widget-trigger {
-  background: #B4231C !important;
-  color: #fff !important;
+  background: linear-gradient(135deg, #F7D56A, #E9B824 60%, #C8971A) !important;
+  color: #1E1A17 !important;
   border-color: #FFF8EC !important;
 }
 
