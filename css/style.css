@@ -118,6 +118,26 @@ body{padding-bottom:var(--bottom-bar)}
 .ftr .social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;color:#EDE4D8;transition:.3s}
 .ftr .social a:hover{background:var(--gold);color:var(--ink);border-color:var(--gold)}
 .ftr .social svg{width:18px;height:18px}
+.ftr .social a.g-rev{background:#fff;border-color:#fff}
+.ftr .social a.g-rev:hover{background:#fff;border-color:var(--gold)}
+
+/* Floating Instagram, Facebook & Google review */
+.social-float{position:fixed;top:96px;right:14px;z-index:880;display:flex;flex-direction:column;gap:12px}
+.social-float a{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;box-shadow:0 12px 28px -12px rgba(30,26,23,.7);transition:transform .25s var(--ease),box-shadow .25s;position:relative}
+.social-float a:hover,.social-float a:focus-visible{transform:translateY(-3px) scale(1.06);box-shadow:0 16px 32px -12px rgba(30,26,23,.8)}
+.social-float svg{width:22px;height:22px}
+.social-float .sf-ig{background:radial-gradient(circle at 30% 110%,#fdf497 0,#fd5949 45%,#d6249f 62%,#285AEB 90%);color:#fff}
+.social-float .sf-fb{background:#1877F2;color:#fff}
+.social-float .sf-g{background:#fff;border:2px solid var(--gold);box-shadow:0 0 0 3px rgba(233,184,36,.35),0 12px 28px -12px rgba(30,26,23,.7)}
+.social-float .sf-lbl{position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);background:var(--ink);color:#fff;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:999px;white-space:nowrap;box-shadow:var(--sh);pointer-events:none;opacity:0;transition:opacity .2s}
+.social-float .sf-g:hover .sf-lbl,.social-float .sf-g:focus-visible .sf-lbl{opacity:1}
+.social-float .sf-lbl::after{content:"";position:absolute;right:-5px;top:50%;transform:translateY(-50%) rotate(45deg);width:8px;height:8px;background:var(--ink)}
+@media(max-width:899px){
+  .social-float{top:72px;bottom:auto;right:10px;gap:10px}
+  .social-float a{width:44px;height:44px}
+  .social-float svg{width:20px;height:20px}
+  .social-float .sf-lbl{display:none}
+}
 
 /* Toast */
 .toast{position:fixed;left:50%;bottom:calc(var(--bottom-bar) + 16px);transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px;font-size:.85rem;font-weight:600;opacity:0;transition:.4s var(--ease);z-index:999;pointer-events:none;white-space:nowrap}
@@ -141,4 +161,9 @@ body{padding-bottom:var(--bottom-bar)}
 @media(max-width:420px){
   .hdr .btn-cater svg{display:none}
 }
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .tick .t{transform:none!important;width:100%;flex-wrap:wrap;justify-content:center}
+  .tick .track:last-child{display:none}
+}

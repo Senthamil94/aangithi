@@ -294,6 +294,21 @@ html.a11y-stop-animations *::after {
   scroll-behavior: auto !important;
 }
 
+/* Keep ticker text fully on-screen when motion is paused */
+html.a11y-stop-animations .tick .t,
+html.a11y-stop-animations .tick .t::before,
+html.a11y-stop-animations .tick .t::after {
+  animation: none !important;
+  animation-duration: 0s !important;
+  transform: none !important;
+  width: 100% !important;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+html.a11y-stop-animations .tick .track:last-child {
+  display: none;
+}
+
 /* Larger text: drop vw clamps so every heading tracks html font-size */
 html.a11y-text-scaled .hero h1 {
   font-size: 4.2rem !important;
