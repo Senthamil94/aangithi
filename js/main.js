@@ -23,10 +23,10 @@
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
   $$('.rv').forEach(el=>io.observe(el));
 
-  /* open / closed status (12:00pm–9:30pm PT) */
+  /* open / closed status (11:00am–9:30pm PT) */
   const now=new Date(new Date().toLocaleString('en-US',{timeZone:'America/Los_Angeles'}));
   const mins=now.getHours()*60+now.getMinutes();
-  const open=mins>=12*60&&mins<21*60+30;
+  const open=mins>=11*60&&mins<21*60+30;
   $$('[data-status]').forEach(status=>{
     status.textContent=open?'Open now':'Closed now';
     status.classList.toggle('closed',!open);
