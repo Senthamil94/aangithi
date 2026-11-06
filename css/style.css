@@ -161,6 +161,56 @@ body{padding-bottom:var(--bottom-bar)}
 @media(max-width:420px){
   .hdr .btn-cater svg{display:none}
 }
+/* ---- Promo flyer ---- */
+.flyer-launch{
+  position:fixed;left:16px;bottom:84px;z-index:885;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 14px;border-radius:999px;
+  background:linear-gradient(135deg,#F7D56A,#E9B824 55%,#C8971A);
+  color:var(--ink);font-weight:800;font-size:.82rem;letter-spacing:.01em;
+  box-shadow:0 12px 28px -12px rgba(30,26,23,.65);
+  border:2px solid #FFF8EC;
+}
+.flyer-launch svg{width:16px;height:16px;flex:none}
+.flyer-launch:hover{transform:translateY(-2px)}
+@media(max-width:899px){
+  .flyer-launch{bottom:calc(var(--bottom-bar) + 78px + env(safe-area-inset-bottom));left:12px;font-size:.78rem;padding:9px 12px}
+}
+.flyer{
+  position:fixed;inset:0;z-index:1200;
+  display:grid;place-items:center;padding:16px;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .35s var(--ease),visibility .35s;
+}
+.flyer[hidden]{display:none}
+.flyer.open{opacity:1;visibility:visible;pointer-events:auto}
+.flyer-scrim{position:absolute;inset:0;background:rgba(30,26,23,.62)}
+.flyer-dialog{
+  position:relative;z-index:1;
+  width:min(440px,calc(100vw - 28px));
+  max-height:calc(100dvh - 28px);
+  overflow:auto;
+  background:#F6EFE2;
+  border-radius:22px;
+  box-shadow:0 28px 70px -24px rgba(30,26,23,.7);
+}
+.flyer-close{
+  position:absolute;top:10px;right:10px;z-index:2;
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(255,248,236,.94);color:#3A2A14;
+  border:1.5px solid rgba(58,42,20,.18);
+  font-size:1.25rem;line-height:1;
+  display:grid;place-items:center;
+  box-shadow:0 8px 18px -10px rgba(30,26,23,.6);
+}
+.flyer-art{display:block}
+.flyer-art img{width:100%;height:auto;border-radius:22px 22px 0 0}
+.flyer-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px 14px 16px}
+.flyer-actions .btn{width:100%;padding:12px 10px;font-size:.9rem}
+@media(max-width:420px){
+  .flyer-actions{grid-template-columns:1fr}
+}
+
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   html{scroll-behavior:auto}
