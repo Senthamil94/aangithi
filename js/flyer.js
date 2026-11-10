@@ -1,7 +1,7 @@
 /* Diwali weekend flyer. Set enabled to false to hide it site-wide. */
 (function () {
   var FLYER = {
-    enabled: true,
+    enabled: false,
     id: 'diwali10',
     image: 'images/diwali-weekend-special.jpg',
     alt: 'Diwali Weekend Special. Get 10% off on online and pickup orders. Use code DIWALI10.',
